@@ -26,5 +26,12 @@ public abstract class Usuario {
    public void setEmail(String email){
     this.email = email;
    }
+
+   public Usuario(String nome, String cpf, String email){
+    this.nome = nome;
+    this.cpf = cpf;
+    this.email = email;
+   }
    
+
 }
