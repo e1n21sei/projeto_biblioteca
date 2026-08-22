@@ -1,3 +1,4 @@
-public class Disponibilidade {
-    
+public interface Disponibilidade {
+    void emprestar();
+    void devolver();
 }
