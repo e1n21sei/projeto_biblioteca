@@ -32,6 +32,8 @@ public abstract class Usuario {
     this.cpf = cpf;
     this.email = email;
    }
-   
+
+   public abstract void
+   listarInformacoes(); 
 
 }
