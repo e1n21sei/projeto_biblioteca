@@ -51,15 +51,21 @@ public class Menu{
         String autor = scanner.nextLine();
 
         System.out.println("Digite o ano de publicação: ");
+        try{
         int anoPublicacao = scanner.nextInt();
         scanner.nextLine();
-
+        
         Livro livro = new Livro(titulo,autor,anoPublicacao, true);
 
         BancoDados.adicionarLivro(livro);
 
         System.out.println("Livro cadastrado com sucesso!");
+        }
+        catch(Exception e) {
+            System.out.println("Digite apenas números!");
+            scanner.nextLine();
 
+        }
     }
     public static void cadastrarUsuario(){
         System.out.println("============== *CADASTRAR USUARIO* ============== ");
@@ -67,8 +73,15 @@ public class Menu{
         System.out.println("2 - Funcionario");
         System.out.println("Escolha o tipo de usuario: ");
 
-        int tipo = scanner.nextInt();
-        scanner.nextLine();
+        int tipo;
+        try {
+        tipo = scanner.nextInt();
+        scanner.nextLine();}
+        catch (Exception e){
+            System.out.println("Digite apenas numeros.");
+            scanner.nextLine();
+            return;
+        }
 
         System.out.println("Digite o nome: ");
         String nome = scanner.nextLine();
@@ -106,21 +119,37 @@ public class Menu{
         System.err.println("Usuario Cadastrado com sucesso!");
     }
     public static void exibirMenu() {
-    int opcao;
+    int opcao = 0;
 
     do {
         System.out.println("\n========== *SISTEMA DA BIBLIOTECA* ==========");
+
         System.out.println("1 - Cadastrar Livro");
+
         System.out.println("2 - Listar Livros");
+
         System.out.println("3 - Cadastrar Usuário");
+
         System.out.println("4 - Listar Usuários");
+
         System.out.println("5 - Pegar Livro");
+
         System.out.println("6 - Devolver Livro");
+
         System.out.println("7 - Sair");
+
         System.out.print("Escolha uma opção: ");
 
+        try{
         opcao = scanner.nextInt();
         scanner.nextLine();
+    }
+
+        catch (Exception e){
+            System.out.println("Digite apenas numeros!");
+            scanner.nextLine();
+            continue;
+        }
 
         switch (opcao) {
             case 1:
