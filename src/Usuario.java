@@ -3,6 +3,12 @@ public abstract class Usuario {
     private String cpf;
     private String email;
 
+    public Usuario(String nome, String cpf, String email){
+    this.nome = nome;
+    this.cpf = cpf;
+    this.email = email;
+   } 
+
    public String getNome(){
     return nome;
    }
@@ -27,13 +33,7 @@ public abstract class Usuario {
     this.email = email;
    }
 
-   public Usuario(String nome, String cpf, String email){
-    this.nome = nome;
-    this.cpf = cpf;
-    this.email = email;
-   }
-
-   public abstract void
-   listarInformacoes(); 
+  
+   public abstract void listarInformacoes(); 
 
 }

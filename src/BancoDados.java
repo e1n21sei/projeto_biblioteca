@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 public class BancoDados {
-    private ArrayList<Livro> livros;
-    private ArrayList<Usuario> usuarios;
+    private static ArrayList<Livro> livros;
+    private static ArrayList<Usuario> usuarios;
 
-    public BancoDados(){
+    public static void inicializarBancoDados(){
         livros = new ArrayList<>();
         usuarios = new ArrayList<>();
 
@@ -22,8 +22,9 @@ public class BancoDados {
         Livro livro5 = new Livro("O Cortiço", "Aluísio Azevedo", 1890, true);
         adicionarLivro(livro5);
 
+
     }
-    public void adicionarLivro(Livro livro){
+    public static void adicionarLivro(Livro livro){
         livros.add(livro);
     }
 
@@ -31,4 +32,29 @@ public class BancoDados {
         usuarios.add(usuario);
     }
 
-}
+    public static void buscarLivro(Livro livro){
+        if (livro.isDisponibilidade()){
+            System.out.println("O livro está disponível para empréstimo!.");}
+            else {
+                System.out.println("O livro está indisponivel no momento! Tente novamente mais tarde.");
+            }
+        }
+
+        public static void listarLivros(){
+            for(Livro livro : livros){
+                System.out.println("Titulo: " + livro.getTitulo());
+                System.out.println("Autor: " + livro.getAutor());
+                System.out.println("Ano de publicação: " + livro.getanoPublicacao());
+                System.out.println("Disponibilidade: " + livro.isDisponibilidade());
+                System.out.println("============================================="); 
+            }
+
+        }
+        public static void listarUsuarios() {
+            for (Usuario usuario : usuarios){
+                usuario.listarInformacoes();
+            System.out.println("=============================================");
+            }
+        }
+    }
+
