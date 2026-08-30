@@ -56,5 +56,8 @@ public class BancoDados {
             System.out.println("=============================================");
             }
         }
+        public static ArrayList<Livro>getLivros() {
+            return livros;
+        }
     }
 
