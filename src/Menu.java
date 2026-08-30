@@ -41,4 +41,22 @@ public class Menu{
         System.out.println("Livro não encontrado!.");
     }
     
+    public static void cadastrarLivro(){
+        System.out.println("Digite o titulo do livro: ");
+        String titulo = scanner.nextLine();
+
+        System.out.println("Digite o autor do livro: ");
+        String autor = scanner.nextLine();
+
+        System.out.println("Digite o ano de publicação: ");
+        int anoPublicacao = scanner.nextInt();
+        scanner.nextLine();
+
+        Livro livro = new Livro(titulo,autor,anoPublicacao, true);
+
+        BancoDados.adicionarLivro(livro);
+
+        System.out.println("Livro cadastrado com sucesso!");
+        
+    }
 }
