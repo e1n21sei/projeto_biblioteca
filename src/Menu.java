@@ -16,18 +16,20 @@ public class Menu{
                     livro.emprestar();
 
                     System.out.println("Empréstimo realizado com sucesso.");
+                    return;
                 } else {
                    
                     System.out.println("Livro indisponivel!");
                     return;
                 }
             }
-            System.out.println("Livro não encontrado.");
+           
         }
+         System.out.println("Livro não encontrado.");
     }
 
     public static void devolverLivro(){
-        System.out.println("Digite o titulo do livro que deseja remover: ");
+        System.out.println("Digite o titulo do livro que deseja devolver: ");
         String titulo = scanner.nextLine();
 
         for (Livro livro : BancoDados.getLivros()){
