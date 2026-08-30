@@ -57,6 +57,50 @@ public class Menu{
         BancoDados.adicionarLivro(livro);
 
         System.out.println("Livro cadastrado com sucesso!");
-        
+
+    }
+    public static void cadastrarUsuario(){
+        System.out.println("============== *CADASTRAR USUARIO* ============== ");
+        System.out.println("1 - Aluno");
+        System.out.println("2 - Funcionario");
+        System.out.println("Escolha o tipo de usuario: ");
+
+        int tipo = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.println("Digite o nome: ");
+        String nome = scanner.nextLine();
+
+        System.out.println("Digite seu CPF: ");
+        String cpf = scanner.nextLine();
+
+        System.out.println("Digite o e-mail: ");
+        String email = scanner.nextLine();
+
+        if (tipo ==1){
+            System.out.println("Digite o curso: ");
+            String curso = scanner.nextLine();
+
+            System.out.println("Digite a turma: ");
+            String turma = scanner.nextLine();
+
+            Aluno aluno = new Aluno(nome, cpf, email, curso,turma);
+
+            BancoDados.adicionarUsuario(aluno);
+        }
+        else if (tipo == 2){
+           System.out.println("Digite o cargo: ");
+           String cargo = scanner.nextLine();
+
+           Funcionario funcionario = new Funcionario(nome,cpf,email,cargo);
+
+           BancoDados.adicionarUsuario(funcionario);
+
+        }
+        else {
+            System.out.println("Opção invalida. ");
+            return;
+        }
+        System.err.println("Usuario Cadastrado com sucesso!");
     }
 }

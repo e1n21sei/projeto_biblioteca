@@ -28,7 +28,7 @@ public class BancoDados {
         livros.add(livro);
     }
 
-    public void adicionarUsuario(Usuario usuario){
+    public static void adicionarUsuario(Usuario usuario){
         usuarios.add(usuario);
     }
 
