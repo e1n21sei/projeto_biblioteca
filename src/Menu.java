@@ -119,7 +119,7 @@ public class Menu{
         System.err.println("Usuario Cadastrado com sucesso!");
     }
     public static void exibirMenu() {
-    
+    int opcao;
 
     do {
         System.out.println("\n========== *SISTEMA DA BIBLIOTECA* ==========");
@@ -139,17 +139,11 @@ public class Menu{
         System.out.println("7 - Sair");
 
         System.out.print("Escolha uma opção: ");
-        int opcao;
-        try{
+        
         opcao = scanner.nextInt();
         scanner.nextLine();
-    }
 
-        catch (Exception e){
-            System.out.println("Digite apenas numeros!");
-            scanner.nextLine();
-            continue;
-        }
+
 
         switch (opcao) {
             case 1:
