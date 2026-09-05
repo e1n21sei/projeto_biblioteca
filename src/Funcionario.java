@@ -13,9 +13,12 @@ public class Funcionario extends Usuario {
     return cargo;
    }
 
-    @Override
-   public void listarInformacoes(){
-
-   } 
+   @Override
+public void listarInformacoes() {
+    System.out.println("Nome: " + getNome());
+    System.out.println("CPF: " + getCpf());
+    System.out.println("E-mail: " + getEmail());
+    System.out.println("Curso: " + getCargo());
+   }
 
 }

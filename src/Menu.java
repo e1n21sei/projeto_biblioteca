@@ -1,5 +1,8 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Menu{
+    
+    
     private static Scanner scanner = new Scanner(System.in);
 
     public static void realizarEmprestimo() {
@@ -72,8 +75,8 @@ public class Menu{
         System.out.println("1 - Aluno");
         System.out.println("2 - Funcionario");
         System.out.println("Escolha o tipo de usuario: ");
-
         int tipo;
+        
         try {
         tipo = scanner.nextInt();
         scanner.nextLine();}
@@ -119,7 +122,8 @@ public class Menu{
         System.err.println("Usuario Cadastrado com sucesso!");
     }
     public static void exibirMenu() {
-    int opcao;
+        int opcao = 0;
+    
 
     do {
         System.out.println("\n========== *SISTEMA DA BIBLIOTECA* ==========");
@@ -140,9 +144,17 @@ public class Menu{
 
         System.out.print("Escolha uma opção: ");
         
+        try {
         opcao = scanner.nextInt();
-        scanner.nextLine();
+      scanner.nextLine();
+    } catch (InputMismatchException e) {
+      System.out.println("Digite apenas numeros!");
+      scanner.nextLine();
+       continue;
+    }
 
+
+ 
 
 
         switch (opcao) {

@@ -51,11 +51,21 @@ public class BancoDados {
 
         }
         public static void listarUsuarios() {
-            for (Usuario usuario : usuarios){
-                usuario.listarInformacoes();
-            System.out.println("=============================================");
-            }
+    for (Usuario usuario : usuarios) {
+
+        if (usuario instanceof Aluno) {
+            Aluno aluno = (Aluno) usuario;
+            aluno.listarInformacoes();
+
+        } else if (usuario instanceof Funcionario) {
+            Funcionario funcionario = (Funcionario) usuario;
+            funcionario.listarInformacoes();
         }
+
+        System.out.println("=============================================");
+    }
+}
+        
         public static ArrayList<Livro>getLivros() {
             return livros;
         }

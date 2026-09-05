@@ -26,8 +26,12 @@ public class Aluno extends Usuario {
 
   
 
-    @Override
-   public void listarInformacoes(){
-
-   } 
+ @Override
+public void listarInformacoes() {
+    System.out.println("Nome: " + getNome());
+    System.out.println("CPF: " + getCpf());
+    System.out.println("E-mail: " + getEmail());
+    System.out.println("Curso: " + getCurso());
+    System.out.println("Turma: " + getTurma());
+}
 }

@@ -1,12 +1,19 @@
 public class Livro implements Disponibilidade {
-
+    
     private String titulo;
     private String autor;
     private int anoPublicacao;
     private boolean disponibilidade;
-
-     public void setTitulo(String titulo){
-    this.titulo = titulo;
+    
+    public Livro(String titulo, String autor, int anoPublicacao, boolean disponibilidade){
+     this.titulo = titulo;
+     this.autor = autor;
+     this.anoPublicacao = anoPublicacao;
+     this.disponibilidade = disponibilidade;
+    }
+    
+    public void setTitulo(String titulo){
+        this.titulo = titulo;
    }
 
     public String getTitulo(){
@@ -37,12 +44,6 @@ public class Livro implements Disponibilidade {
     this.disponibilidade = disponibilidade;
    }
 
-   public Livro(String titulo, String autor, int anoPublicacao, boolean disponibilidade){
-    this.titulo = titulo;
-    this.autor = autor;
-    this.anoPublicacao = anoPublicacao;
-    this.disponibilidade = disponibilidade;
-   }
 
     @Override
     public void emprestar(){
